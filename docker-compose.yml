@@ -1,0 +1,28 @@
+services:
+  stress-tester-1:
+    image: stress-tester-base
+    container_name: stress-tester-1
+    command: ["--url=https://www.google.com", "--requests=100", "--concurrency=5"]
+    environment:
+      - GO_ENV=production
+
+  stress-tester-2:
+    image: stress-tester-base
+    container_name: stress-tester-2
+    command: ["--url=https://www.google.com", "--requests=200", "--concurrency=10"]
+    environment:
+      - GO_ENV=production
+
+  stress-tester-3:
+    image: stress-tester-base
+    container_name: stress-tester-3
+    command: ["--url=https://www.google.com", "--requests=300", "--concurrency=15"]
+    environment:
+      - GO_ENV=production
+
+  stress-tester-4:
+    image: stress-tester-base
+    container_name: stress-tester-4
+    command: ["--url=https://www.google.com", "--requests=400", "--concurrency=20"]
+    environment:
+      - GO_ENV=production
